@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #b7131a;
+    --primary-hover: #9c0e14;
+    --secondary: #4c56af;
+    --tertiary: #186a22;
+    --bg-surface: #fcf9f8;
+    --surface-card: #ffffff;
+    --surface-low: #f6f3f2;
+    --surface-container: #f0edec;
+    --text-main: #1c1b1b;
+    --text-muted: #5b403d;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(183, 19, 26, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 25px rgba(183, 19, 26, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(183, 19, 26, 0);
+  }
+}
+
+.animate-sos-pulse {
+  animation: pulse-ring 2.2s infinite cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+/* Custom scrollbar for clean UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f6f3f2;
+}
+::-webkit-scrollbar-thumb {
+  background: #dcd9d9;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #906f6c;
+}
